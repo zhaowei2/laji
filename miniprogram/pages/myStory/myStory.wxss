@@ -1,0 +1,38 @@
+/* miniprogram/pages/myStory/myStory.wxss */
+.area{
+  padding:25rpx;
+}
+.text-area{
+  border:1px solid #ccc;
+  padding:20rpx;
+  font-size: 30rpx;
+  width: 100%;
+}
+.user{
+  display: flex;
+}
+.user-name{
+  line-height: 120rpx;
+}
+.userinfo-avatar{
+  width:100rpx;
+  height:100rpx;
+  margin:20rpx;
+  border-radius:50%;
+  background-size:cover;
+  background-color:white;
+}
+.uploader-text{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+  border:1rpx solid #ccc;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+
+}
+.uploader-text text{
+  font-size: 100rpx;
+  color:#ccc;
+}

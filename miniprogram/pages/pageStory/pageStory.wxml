@@ -1,0 +1,26 @@
+<!--pages/pageStory/pageStory.wxml-->
+<view>
+  <view class='story-item' wx:for="{{baseData}}" wx:for-item="item" wx:key="index" > 
+    <view class='story-user'>
+      <view class='story-user-photo'>
+        <image src="{{item.avatar}}"></image>
+      </view>
+      <view class='story-user-name'>
+        <text>{{item.nickName}}</text>
+      </view>
+      <view class='story-user-name'>
+        <text>评论</text>
+        <text>10</text>
+      </view>
+    </view>
+    <view class='pic-detail' data-item="{{item}}" bindtap="handStoryDetial">
+      <view class='pic-photo'>
+        <image mode='widthFix' src="{{item.filePath}}"></image>  
+      </view>
+      <view class='pic-desc'>
+        {{item.textArea}}
+      </view>
+    </view>
+  </view>
+</view>  
+

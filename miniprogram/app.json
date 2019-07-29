@@ -1,0 +1,39 @@
+{
+  "pages": [
+
+    "pages/pageStory/pageStory",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/myStory/myStory",
+    "pages/storyDetail/storyDetail"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+
+      {
+        "pagePath": "pages/pageStory/pageStory",
+        "text": "那些事",
+        "iconPath": "images/tabbar/story.png",
+        "selectedIconPath": "images/tabbar/story.png"
+      },
+      {
+        "pagePath": "pages/myStory/myStory",
+        "text": "我的事",
+        "iconPath": "images/tabbar/story.png",
+        "selectedIconPath": "images/tabbar/story.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
