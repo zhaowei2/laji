@@ -7,6 +7,7 @@
 }
 .story-item .story-user {
   display: flex;
+  padding:0 20rpx;
 }
 .story-item .story-user .story-user-photo{
   width: 100rpx;
@@ -21,8 +22,8 @@
 .story-item .story-user .story-user-name{
   float: left;
   font-size: 32rpx;
-  line-height: 100rpx;
-  margin-left:20rpx; 
+  line-height: 48rpx;
+  margin-right:30rpx; 
 }
 .line{
   height: 10rpx;
@@ -36,7 +37,7 @@
 }
 .pic-photo{
   flex: 1;
-  padding:20rpx;
+  padding:5rpx 20rpx;
 } 
 .pic-photo image{
   width: 100%;
@@ -44,4 +45,15 @@
 .pic-detail .pic-desc{
   flex: 1;
    padding:20rpx;
+}
+.story-item-title{
+
+  padding:0 20rpx;
+  font-size: 32rpx;
+}
+.separate{
+  height: 5rpx;
+  width: 100%;
+  margin-top:35rpx;
+  background: #ccc;
 }

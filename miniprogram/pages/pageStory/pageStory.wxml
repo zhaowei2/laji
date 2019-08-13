@@ -1,25 +1,45 @@
 <!--pages/pageStory/pageStory.wxml-->
+<!-- <navbar page-name="图片"></navbar>
+<view style='height:106rpx;'></view> -->
 <view>
   <view class='story-item' wx:for="{{baseData}}" wx:for-item="item" wx:key="index" > 
-    <view class='story-user'>
-      <view class='story-user-photo'>
-        <image src="{{item.avatar}}"></image>
-      </view>
-      <view class='story-user-name'>
-        <text>{{item.nickName}}</text>
-      </view>
-      <view class='story-user-name'>
-        <text>评论</text>
-        <text>10</text>
-      </view>
+    <!-- title -->
+    <view class='story-item-title'>
+      <text>
+        {{item.textArea}}
+      </text>
     </view>
-    <view class='pic-detail' data-item="{{item}}" bindtap="handStoryDetial">
+    <!-- img -->
+    <view class='pic-detail' data-item="{{item}}" >
       <view class='pic-photo'>
         <image mode='widthFix' src="{{item.filePath}}"></image>  
       </view>
-      <view class='pic-desc'>
+      <!-- <view class='pic-desc'>
         {{item.textArea}}
+      </view> -->
+    </view>
+    <!-- user-discuss -->
+    <view class='story-user'>
+      <!-- <view class='story-user-photo'>
+        <image src="{{item.avatar}}"></image>
       </view>
+      <view class='story-user-name'>
+        <text>{{item.nickName}}</text> -->
+      <!-- </view> -->
+      <view class='story-user-name' data-item="{{item}}" data-index="{{index}}"  bindtap="handStoryPraise">
+        <text>赞</text>
+        <text>{{item.praise}}</text>
+      </view>
+      <view class='story-user-name' data-item="{{item}}" data-index="{{index}}"  bindtap="handStoryPeak">
+        <text>踩</text>
+        <text>{{item.peak}}</text>
+      </view>
+      <view class='story-user-name'  data-item="{{item}}" data-index="{{index}}" bindtap="handStoryDetial">
+        <text>评论</text>
+        <text>{{item.discuss}}</text>
+      </view>
+    </view>
+    <view class='separate'>
     </view>
   </view>
 </view>  

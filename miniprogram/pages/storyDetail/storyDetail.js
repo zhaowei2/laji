@@ -10,13 +10,21 @@ Page({
     discussVlaue:'',
     avatarUrl: '',
     userInfo: {},
-    item: app.globalData
+    item: {}
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    console.log(app.globalData)
+    this.setData({
+      item: app.globalData
+    })
+    wx.setNavigationBarTitle({
+      title: '评论',
+    })
+
     this.getDiscuss()
     var that =this
     wx.getSetting({
@@ -75,9 +83,11 @@ Page({
         console.error('[数据库] [新增记录] 失败：', err)
       }
     })
+
   },
   getDiscuss:function(){
-    console.log(this.data.item.item._id,)
+    console.log(this.data.item)
+    console.log(this.data.item.item._id)
     const db = wx.cloud.database()
     const that =this
     db.collection('discuss_table').where({
@@ -86,9 +96,11 @@ Page({
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
         console.log(res)
+       
         that.setData({
           discussList:res.data
         })
+        that.setCounter(res.data.length)
       },
       fail: err => {
         wx.showToast({
@@ -99,7 +111,18 @@ Page({
       }
     })
   },
-
+  setCounter(num){
+    console.log(num)
+    const db = wx.cloud.database();
+    const that = this;
+    db.collection('counters').doc(that.data.item.item._id).update({
+      data: {
+        discuss: num,
+      }
+    }).then(res => {
+      return res
+    })
+  },
   /**
    * Lifecycle function--Called when page is initially rendered
    */

@@ -11,12 +11,32 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     textArea:'',
     avatarUrl: './../../images/no2.png',
-    userInfo:{}
+    userInfo:{},
+    index:0,
+    picTypeObjValue:'1',
+    picTypeObj:[{
+      lable:'动物',
+      value:'1'
+    },{
+      lable:'风景',
+      value:'2'
+    },{
+      lable:'动漫',
+      value:'3'
+    }]
   },
 
   /**
    * Lifecycle function--Called when page load
    */
+  bindPickerChange(e){
+    console.log(e)
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value,
+      picTypeObjValue: this.data.picTypeObj[e.detail.value].value
+    })
+  },
   onLoad: function (options) {
     // this.initGetUser()
     // 是否授权
@@ -74,13 +94,19 @@ Page({
         return false
       }
       const db = wx.cloud.database()
+      let createTime = new Date().getTime();
       db.collection('counters').add({
         data: {
           textArea: this.data.textArea,
-          filePath: this.data.filePath,
+          filePath: this.data.fileId,
           avatar:this.data.avatarUrl,
           nickName:this.data.userInfo.nickName,
-          fileId:that.data.fileId
+          fileId:this.data.fileId,
+          picType: this.data.picTypeObjValue,
+          createTime: createTime,
+          praise:0,
+          peak:0,
+          discuss:0,
         },
         success: res => {
           // 在返回结果中会包含新创建的记录的 _id
@@ -130,18 +156,6 @@ Page({
               that.setData({
                 fileId: res.fileID
               })
-              wx.cloud.downloadFile({
-                fileID: res.fileID, // 文件 ID
-                success: data => {
-                  // 返回临时文件路径
-                  console.log(data.tempFilePath)
-                  that.setData({
-                    filePath: data.tempFilePath
-                  })
-                },
-                fail: console.error
-              })
-             
             }
           })
         },

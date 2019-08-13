@@ -1,0 +1,17 @@
+/* miniprogram/pages/class/class.wxss */
+.class-item{
+  height:100rpx;
+  border-radius: 20rpx;
+  margin-bottom:30rpx; 
+  line-height: 100rpx;
+  text-align: center;
+}
+.class-list view:nth-child(1){
+  background: red;
+}
+.class-list view:nth-child(2){
+  background: green;
+}
+.class-list view:nth-child(3){
+  background: blue;
+}

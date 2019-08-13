@@ -1,5 +1,5 @@
 <!--miniprogram/pages/storyDetail/storyDetail.wxml-->
-<view>
+<view class='content'>
   <view class="user">
     <view class='user-avatar'>
       <image src='{{item.item.avatar}}'></image>
@@ -11,12 +11,10 @@
   <view class='image-item'>
     <image mode='widthFix' src='{{item.item.filePath}}'></image>
   </view>
-  
   <view class='discuss'>
     <input class='discuss-value' value="{{discussVlaue}}"  bindinput="bindTextInputBlur"></input>
     <button bindtap="postDiscuss">发表</button>
   </view>
-
   <view class='discuss-content' wx:for="{{discussList}}" wx:for-item="item" wx:key="index">
     <text>{{item.discuss_content}}</text>
   </view>

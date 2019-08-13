@@ -95,7 +95,7 @@ Page({
         })
 
         const filePath = res.tempFilePaths[0]
-        
+        console.log(res)
         // 上传图片
         const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
         wx.cloud.uploadFile({
@@ -103,7 +103,7 @@ Page({
           filePath,
           success: res => {
             console.log('[上传文件] 成功：', res)
-
+            console.log(res)
             app.globalData.fileID = res.fileID
             app.globalData.cloudPath = cloudPath
             app.globalData.imagePath = filePath

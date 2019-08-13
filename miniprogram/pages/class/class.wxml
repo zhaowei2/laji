@@ -1,0 +1,10 @@
+<!--miniprogram/pages/class/class.wxml-->
+<navbar page-name="分类"></navbar>
+<view style="height:146rpx"></view>
+<view class='class-list'>
+  <view  wx:for="{{classList}}"  wx:for-item="item" wx:key="item._id" bindtap='jumpe'>
+    <view class='class-item'>
+      {{item.nickName}}
+    </view>
+  </view>
+</view>

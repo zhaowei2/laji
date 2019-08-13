@@ -6,7 +6,10 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true
 	},
 	"appid": "wx055534c29d3d831f",
 	"projectname": "laji2",
@@ -14,6 +17,7 @@
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"compileType": "miniprogram",
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
